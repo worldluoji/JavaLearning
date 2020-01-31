@@ -1,0 +1,28 @@
+1. String a="b"和String c= new String("b")创建的对象在Java的哪个区？
+String a="b"可能创建一个对象或者不创建对象,如果"b"这个字符串在常量池里不存在会在常量池创建一个String对象"b",如果已经存在则a直接reference to这个常量池里的对象;
+String c= new String("b")至少创建一个对象,也可能两个,因为用到new关键字,会在堆内在创建一个的String对象,它的值是"b"。同时,如果"b"这个字符串在常量池里不存在,会在常量池创建这个一个String对象"b"。
+
+2.从Java7开始，永久代中的静态变量和运行时常量池已经被转移到了堆中；Java8则使用元空间代替了永久代（静态变量和运行时常量还是在堆中），元空间（本地内存）主要存储类的一些信息，包括方法、字段、类等描述类信息。
+
+3.常量池在逻辑空间是属于方法区。堆、栈、方法区等，这些是一种规范，是逻辑上的分区。
+在物理空间中，常量池是存储在堆内存空间的。
+
+4.
+private static int i=1；
+static{
+  i=0;
+}
+public static void main(String [] args){
+  System.out.println(i);
+} 结果为0
+
+static{
+  i=0;
+}
+private static int i=1；
+public static void main(String [] args){
+  System.out.println(i);
+}
+结果为1
+
+5.

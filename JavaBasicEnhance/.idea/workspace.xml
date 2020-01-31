@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="70b3106e-92f0-475a-a8f9-28bfc99d56e6" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1P6W5oHm292vddmfw36z2WtjJmF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564753571583" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Demo">
+    <configuration name="BasicTypeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BasicTypeDemo.BasicTypeDemo" />
+      <module name="JavaBasicEnhance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BasicTypeDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Demo" />
+      <module name="JavaBasicEnhance" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTrainingDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.decorator.simpledemo.MyTrainingDemo" />
+      <module name="JavaBasicEnhance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.decorator.simpledemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleCloneDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CloneDemo.SimpleCloneDemo" />
+      <module name="JavaBasicEnhance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CloneDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLambda" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LambdaDemo.TestLambda" />
+      <module name="JavaBasicEnhance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LambdaDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo" />
+        <item itemvalue="Application.BasicTypeDemo" />
+        <item itemvalue="Application.TestLambda" />
+        <item itemvalue="Application.SimpleCloneDemo" />
+        <item itemvalue="Application.MyTrainingDemo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70b3106e-92f0-475a-a8f9-28bfc99d56e6" name="Default Changelist" comment="" />
+      <created>1554625931589</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554625931589</updated>
+      <workItem from="1554625938186" duration="1803000" />
+      <workItem from="1554638804441" duration="68000" />
+      <workItem from="1555685967860" duration="1551000" />
+      <workItem from="1555811673268" duration="25000" />
+      <workItem from="1556885182521" duration="2451000" />
+      <workItem from="1557063411943" duration="2219000" />
+      <workItem from="1557239778112" duration="151000" />
+      <workItem from="1558704095987" duration="984000" />
+      <workItem from="1559999487864" duration="9688000" />
+      <workItem from="1561383995524" duration="668000" />
+      <workItem from="1565194854657" duration="67000" />
+      <workItem from="1567602041212" duration="6415000" />
+      <workItem from="1568817680750" duration="1872000" />
+      <workItem from="1569986654919" duration="1916000" />
+      <workItem from="1571752870356" duration="3447000" />
+      <workItem from="1572664095758" duration="304000" />
+      <workItem from="1575980613248" duration="310000" />
+      <workItem from="1580284389592" duration="154000" />
+    </task>
+    <task id="LOCAL-00001" summary="添加Java8 Lambda表达式作为入参的例子">
+      <created>1556886952233</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556886952233</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加Optional示例">
+      <created>1558623911870</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558623911870</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加BeanUtils示例">
+      <created>1560072485655</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560072485657</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加Optional示例">
+      <created>1560072544223</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560072544223</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加Optional示例">
+      <created>1560072598425</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560072598425</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="添加Java8 Lambda表达式作为入参的例子" />
+    <MESSAGE value="添加BeanUtils示例" />
+    <MESSAGE value="添加Optional示例" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加Optional示例" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ReflectDemo/springaop/SpringAopDemo.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
