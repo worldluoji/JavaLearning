@@ -1,6 +1,6 @@
-package com.decorator.simpledemo;
+package com.design.decorator;
 
-import com.decorator.simpledemo.interfaces.ITraining;
+import com.design.decorator.interfaces.ITraining;
 
 public abstract class BaseDecorator implements ITraining {
     private ITraining iTraining;
