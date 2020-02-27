@@ -10,11 +10,15 @@ import java.io.*;
 public class FileInputStreamDemo {
     public static void main(String[] args) throws IOException {
         String filePath = "D:\\JavaLearning\\DesignPattern\\src\\main\\java\\com\\design\\utils\\output\\temp\\testReadInt.txt";
+        DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filePath)));
+        out.writeInt(123); // 这里用了writeInt,读的时候也要用readInt相对应，否则会因为序列化问题导致读出奇怪的结果
+        out.flush();
+        out.close();
         InputStream in = new FileInputStream(filePath);
         InputStream bin = new BufferedInputStream(in);
         DataInputStream din = new DataInputStream(bin);
         int data = din.readInt();
         System.out.println(data);
-        System.out.println('\n' - '0');
+        din.close();
     }
 }
