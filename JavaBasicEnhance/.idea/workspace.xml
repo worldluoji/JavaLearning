@@ -23,6 +23,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -34,56 +39,39 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ReflectDemo.assginfrom" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Demo">
+  <component name="RunManager" selected="Application.AssignFromDemo">
+    <configuration name="AssignFromDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReflectDemo.assginfrom.AssignFromDemo" />
+      <module name="JavaBasicEnhance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ReflectDemo.assginfrom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicTypeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BasicTypeDemo.BasicTypeDemo" />
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="BasicTypeDemo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Demo" />
-      <module name="JavaBasicEnhance" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTrainingDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.decorator.simpledemo.MyTrainingDemo" />
-      <module name="JavaBasicEnhance" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.decorator.simpledemo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleCloneDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CloneDemo.SimpleCloneDemo" />
-      <module name="JavaBasicEnhance" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="CloneDemo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,13 +92,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.BasicTypeDemo" />
+      <item itemvalue="Application.TestLambda" />
+      <item itemvalue="Application.AssignFromDemo" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Demo" />
+        <item itemvalue="Application.AssignFromDemo" />
         <item itemvalue="Application.BasicTypeDemo" />
         <item itemvalue="Application.TestLambda" />
-        <item itemvalue="Application.SimpleCloneDemo" />
-        <item itemvalue="Application.MyTrainingDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -181,15 +172,6 @@
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -228,6 +210,44 @@
     <MESSAGE value="添加BeanUtils示例" />
     <MESSAGE value="添加Optional示例" />
     <option name="LAST_COMMIT_MESSAGE" value="添加Optional示例" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584694589023">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694589023" />
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser" timestamp="1584695122214">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1584695122214" />
+    <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584694581182">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694581182" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1584695368569">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584695368569" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1584695368569">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584695368569" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1584695368569">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584695368569" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1584695368569">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584695368569" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1584694624073">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584694624073" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584694492105">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694492105" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
