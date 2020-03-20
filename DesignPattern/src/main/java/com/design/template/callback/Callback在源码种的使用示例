@@ -1,0 +1,180 @@
+1. Spring 提供了 JdbcTemplate，对 JDBC 进一步封装，来简化数据库编程。使用 JdbcTemplate 查询用户信息，我们只需要编写跟这个业务有关的代码，其中包括，查询用户的 SQL 语句、查询结果与 User 对象之间的映射关系。其他流程性质的代码都封装在了 JdbcTemplate 类中，不需要我们每次都重新编写。
+
+public class JdbcTemplateDemo {
+  private JdbcTemplate jdbcTemplate;
+
+  public User queryUser(long id) {
+    String sql = "select * from user where id="+id;
+    return jdbcTemplate.query(sql, new UserRowMapper()).get(0);
+  }
+
+  class UserRowMapper implements RowMapper<User> {
+    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+      User user = new User();
+      user.setId(rs.getLong("id"));
+      user.setName(rs.getString("name"));
+      user.setTelephone(rs.getString("telephone"));
+      return user;
+    }
+  }
+}
+
+从下面代码我们可以看到，query种最终调用了execute(new QueryStatementCallback())，execute函数的入参就是一个回调数，
+而这个回调函数干的事就是用JDBC去查询数据库并返回结果
+
+
+@Override
+public <T> List<T> query(String sql, RowMapper<T> rowMapper) throws DataAccessException {
+ return query(sql, new RowMapperResultSetExtractor<T>(rowMapper));
+}
+
+@Override
+public <T> T query(final String sql, final ResultSetExtractor<T> rse) throws DataAccessException {
+ Assert.notNull(sql, "SQL must not be null");
+ Assert.notNull(rse, "ResultSetExtractor must not be null");
+ if (logger.isDebugEnabled()) {
+  logger.debug("Executing SQL query [" + sql + "]");
+ }
+
+ class QueryStatementCallback implements StatementCallback<T>, SqlProvider {
+  @Override
+  public T doInStatement(Statement stmt) throws SQLException {
+   ResultSet rs = null;
+   try {
+    rs = stmt.executeQuery(sql);
+    ResultSet rsToUse = rs;
+    if (nativeJdbcExtractor != null) {
+     rsToUse = nativeJdbcExtractor.getNativeResultSet(rs);
+    }
+    return rse.extractData(rsToUse);
+   }
+   finally {
+    JdbcUtils.closeResultSet(rs);
+   }
+  }
+  @Override
+  public String getSql() {
+   return sql;
+  }
+ }
+
+ return execute(new QueryStatementCallback());
+}
+
+@Override
+public <T> T execute(StatementCallback<T> action) throws DataAccessException {
+ Assert.notNull(action, "Callback object must not be null");
+
+ Connection con = DataSourceUtils.getConnection(getDataSource());
+ Statement stmt = null;
+ try {
+  Connection conToUse = con;
+  if (this.nativeJdbcExtractor != null &&
+    this.nativeJdbcExtractor.isNativeConnectionNecessaryForNativeStatements()) {
+   conToUse = this.nativeJdbcExtractor.getNativeConnection(con);
+  }
+  stmt = conToUse.createStatement();
+  applyStatementSettings(stmt);
+  Statement stmtToUse = stmt;
+  if (this.nativeJdbcExtractor != null) {
+   stmtToUse = this.nativeJdbcExtractor.getNativeStatement(stmt);
+  }
+  T result = action.doInStatement(stmtToUse);
+  handleWarnings(stmt);
+  return result;
+ }
+ catch (SQLException ex) {
+  // Release Connection early, to avoid potential connection pool deadlock
+  // in the case when the exception translator hasn't been initialized yet.
+  JdbcUtils.closeStatement(stmt);
+  stmt = null;
+  DataSourceUtils.releaseConnection(con, getDataSource());
+  con = null;
+  throw getExceptionTranslator().translate("StatementCallback", getSql(action), ex);
+ }
+ finally {
+  JdbcUtils.closeStatement(stmt);
+  DataSourceUtils.releaseConnection(con, getDataSource());
+ }
+}
+
+2. 网上有人认为 Hook 就是 Callback，两者说的是一回事儿，只是表达不同而已。
+而有人觉得 Hook 是 Callback 的一种应用。Callback 更侧重语法机制的描述，Hook 更加侧重应用场景的描述。
+VM 提供了 Runtime.addShutdownHook(Thread hook) 方法，可以注册一个 JVM 关闭的 Hook。当应用程序关闭的时候，JVM 会自动调用 Hook 代码
+
+
+public class ShutdownHookDemo {
+
+  private static class ShutdownHook extends Thread {
+    public void run() {
+      System.out.println("I am called during shutting down.");
+    }
+  }
+
+  public static void main(String[] args) {
+    Runtime.getRuntime().addShutdownHook(new ShutdownHook());
+  }
+
+}
+
+
+public class Runtime {
+  public void addShutdownHook(Thread hook) {
+    SecurityManager sm = System.getSecurityManager();
+    if (sm != null) {
+      sm.checkPermission(new RuntimePermission("shutdownHooks"));
+    }
+    ApplicationShutdownHooks.add(hook);
+  }
+}
+
+class ApplicationShutdownHooks {
+    /* The set of registered hooks */
+    private static IdentityHashMap<Thread, Thread> hooks;
+    static {
+            hooks = new IdentityHashMap<>();
+        } catch (IllegalStateException e) {
+            hooks = null;
+        }
+    }
+
+    static synchronized void add(Thread hook) {
+        if(hooks == null)
+            throw new IllegalStateException("Shutdown in progress");
+
+        if (hook.isAlive())
+            throw new IllegalArgumentException("Hook already running");
+
+        if (hooks.containsKey(hook))
+            throw new IllegalArgumentException("Hook previously registered");
+
+        hooks.put(hook, hook);
+    }
+
+    static void runHooks() {
+        Collection<Thread> threads;
+        synchronized(ApplicationShutdownHooks.class) {
+            threads = hooks.keySet();
+            hooks = null;
+        }
+
+        for (Thread hook : threads) {
+            hook.start();
+        }
+        for (Thread hook : threads) {
+            while (true) {
+                try {
+                    hook.join();
+                    break;
+                } catch (InterruptedException ignored) {
+                }
+            }
+        }
+    }
+}
+
+3. 模板方法模式Vs回调
+1）从应用场景上来看，同步回调跟模板模式几乎一致。它们都是在一个大的算法骨架中，自由替换其中的某个步骤，起到代码复用和扩展的目的。而异步回调跟模板模式有较大差别，更像是观察者模式。
+2）回调可以使用匿名类来创建回调对象，可以不用事先定义类；而模板模式针对不同的实现都要定义不同的子类。
+3）Java只能单继承，继承了模板类，就不能再继承其它类了，这样看回调会更灵活
+4）如果某个类中定义了多个模板方法，每个方法都有对应的抽象方法，那即便我们只用到其中的一个模板方法，子类也必须实现所有的抽象方法。而回调就更加灵活，我们只需要往用到的模板方法中注入回调对象即可
