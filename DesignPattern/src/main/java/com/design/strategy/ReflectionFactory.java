@@ -10,6 +10,7 @@ import java.util.Map;
  * 这里的“运行时动态”指的是，我们事先并不知道会使用哪个策略，
  * 而是在程序运行期间，根据配置、用户输入、计算结果等这些不确定因素，动态决定使用哪种策略。
  *  策略有状态，那么就需要使用反射机制去做，这种情况比较少
+ *  但是这里用反射来动态创建一个实例，也没办法避免要修改工厂，比如我们新增了一个type,就不得不改静态代码块，所以要进一步该井
 * */
 public class ReflectionFactory {
     private static Map<String, Class<?>> strategyMap = new HashMap<>();

@@ -1,5 +1,7 @@
 package com.design.strategy;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 /**
 * 翻译成中文就是：定义一族算法类，将每个算法分别封装起来，让它们可以互相替换。
  * 并根据不同的情况选择不容的策略进行后续处理
@@ -12,6 +14,11 @@ public class StrategyDemo {
             strategy.strategy();
         }
         strategy = ReflectionFactory.getStrategy("defend");
+        if (strategy != null) {
+            strategy.strategy();
+        }
+
+        strategy = AnnotationFactory.getStrategy("attack");
         if (strategy != null) {
             strategy.strategy();
         }

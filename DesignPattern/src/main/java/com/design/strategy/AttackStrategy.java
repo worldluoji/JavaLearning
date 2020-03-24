@@ -1,5 +1,6 @@
 package com.design.strategy;
 
+@MyStrategy(type="attack")
 public class AttackStrategy implements Strategy {
     @Override
     public void strategy() {
