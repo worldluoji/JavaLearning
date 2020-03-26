@@ -52,7 +52,7 @@
       <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EqualsAndHashCodeDemo">
+  <component name="RunManager" selected="Application.TreeSetCompareDemo">
     <configuration name="AssignFromDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ReflectDemo.assginfrom.AssignFromDemo" />
       <module name="JavaBasicEnhance" />
@@ -97,7 +97,7 @@
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.equalsandhashcode.*" />
+          <option name="PATTERN" value="com.equalsandhashcode.treeset.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLambda" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LambdaDemo.TestLambda" />
+    <configuration name="TreeSetCompareDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.equalsandhashcode.treeset.TreeSetCompareDemo" />
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LambdaDemo.*" />
+          <option name="PATTERN" value="com.equalsandhashcode.treeset.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,18 +120,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.BasicTypeDemo" />
-      <item itemvalue="Application.TestLambda" />
       <item itemvalue="Application.AssignFromDemo" />
       <item itemvalue="Application.EqualsAndHashCodeDemo" />
       <item itemvalue="Application.BeanUtilsDemo" />
+      <item itemvalue="Application.TreeSetCompareDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TreeSetCompareDemo" />
         <item itemvalue="Application.EqualsAndHashCodeDemo" />
         <item itemvalue="Application.BeanUtilsDemo" />
         <item itemvalue="Application.AssignFromDemo" />
         <item itemvalue="Application.BasicTypeDemo" />
-        <item itemvalue="Application.TestLambda" />
       </list>
     </recent_temporary>
   </component>
@@ -246,10 +246,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694589023" />
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1585192610842">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1585207327244">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585192610842" />
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585207327244" />
     <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584694581182">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -258,22 +258,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585194802485" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585194790827">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585207712769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585194790827" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585194790826">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585207712769" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585207712769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585194790826" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585194790822">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585207712769" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585207712767">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585194790822" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585194790826">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585207712767" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585207712769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585194790826" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585207712769" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1584694624073">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
