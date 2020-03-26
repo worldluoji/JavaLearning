@@ -39,7 +39,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -233,9 +233,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-    </ignored-roots>
     <MESSAGE value="添加Java8 Lambda表达式作为入参的例子" />
     <MESSAGE value="添加BeanUtils示例" />
     <MESSAGE value="添加Optional示例" />
@@ -258,26 +255,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585194802485" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585207712769">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585208284014">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585207712769" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585207712769">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585208284014" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585208284013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585207712769" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585207712767">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585208284013" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585208284012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585207712767" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585207712769">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585208284012" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585208284013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585207712769" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1584694624073">
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585208284013" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1585208282535">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584694624073" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585208282535" />
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584694492105">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
