@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b3106e-92f0-475a-a8f9-28bfc99d56e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/basictype/BigDecimalDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/set/ArraysAsListDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/set/ListRemoveEleDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/set/SubListDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/set/源码分析.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +25,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1P6W5oHm292vddmfw36z2WtjJmF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -42,7 +53,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -55,7 +66,20 @@
       <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BigDecimalDemo">
+  <component name="RunManager" selected="Application.ListRemoveEleDemo">
+    <configuration name="ArraysAsListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.set.ArraysAsListDemo" />
+      <module name="JavaBasicEnhance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.set.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BigDecimalDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.basictype.BigDecimalDemo" />
       <module name="JavaBasicEnhance" />
@@ -69,12 +93,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConcurrentHashMapDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.concurrent.ConcurrentHashMapDemo" />
+    <configuration name="ListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.set.ListDemo" />
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.concurrent.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunctionalInterfaceDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lambda.apple.FunctionalInterfaceDemo" />
+    <configuration name="ListRemoveEleDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.set.ListRemoveEleDemo" />
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lambda.apple.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,25 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PredicateApple" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lambda.apple.PredicateApple" />
+    <configuration name="SubListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.set.SubListDemo" />
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lambda.apple.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TreeSetCompareDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.equalsandhashcode.treeset.TreeSetCompareDemo" />
-      <module name="JavaBasicEnhance" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.equalsandhashcode.treeset.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,19 +133,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.TreeSetCompareDemo" />
-      <item itemvalue="Application.PredicateApple" />
-      <item itemvalue="Application.FunctionalInterfaceDemo" />
-      <item itemvalue="Application.ConcurrentHashMapDemo" />
       <item itemvalue="Application.BigDecimalDemo" />
+      <item itemvalue="Application.ListDemo" />
+      <item itemvalue="Application.ArraysAsListDemo" />
+      <item itemvalue="Application.SubListDemo" />
+      <item itemvalue="Application.ListRemoveEleDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ListRemoveEleDemo" />
+        <item itemvalue="Application.SubListDemo" />
+        <item itemvalue="Application.ArraysAsListDemo" />
+        <item itemvalue="Application.ListDemo" />
         <item itemvalue="Application.BigDecimalDemo" />
-        <item itemvalue="Application.ConcurrentHashMapDemo" />
-        <item itemvalue="Application.FunctionalInterfaceDemo" />
-        <item itemvalue="Application.PredicateApple" />
-        <item itemvalue="Application.TreeSetCompareDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585295025225</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="【修改内容】：BigDecimal的坑&#10;【修改人】：luoji&#10;【修改时间】：2020/03/31">
+      <created>1585622224165</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585622224166</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +289,8 @@
     <MESSAGE value="【修改内容】：函数式编程补充&#10;【修改人】：luoji&#10;【修改时间】：2020/03/26" />
     <MESSAGE value="【修改内容】：笔记&#10;【修改人】：luoji&#10;【修改时间】：2020/03/26" />
     <MESSAGE value="【修改内容】：concurrentHashMap&#10;【修改人】：luoji&#10;【修改时间】：2020/03/27" />
-    <option name="LAST_COMMIT_MESSAGE" value="【修改内容】：concurrentHashMap&#10;【修改人】：luoji&#10;【修改时间】：2020/03/27" />
+    <MESSAGE value="【修改内容】：BigDecimal的坑&#10;【修改人】：luoji&#10;【修改时间】：2020/03/31" />
+    <option name="LAST_COMMIT_MESSAGE" value="【修改内容】：BigDecimal的坑&#10;【修改人】：luoji&#10;【修改时间】：2020/03/31" />
   </component>
   <component name="WindowStateProjectService">
     <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584694589023">
@@ -286,10 +305,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694581182" />
-    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1585295022612">
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1585622222034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585295022612" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585622222034" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1585293820342">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -298,34 +317,58 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585194802485" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585622197146">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585709263715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585622197146" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585622197146">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585709263715" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585709263714">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585622197146" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585622197145">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585709263714" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585709263714">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585622197145" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585622197146">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585709263714" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585709263715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585622197146" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1585208282535">
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585709263715" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585629106987">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585208282535" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585629106987" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585629106986">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585629106986" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585629106986">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585629106986" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585629106986">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585629106986" />
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1585625944219">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1585625944219" />
+    <state x="409" y="52" key="RollbackChangesDialog" timestamp="1585710376477">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="409" y="52" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585710376477" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1585626214008">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585626214008" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1585295032854">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1585295032854" />
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585559126996">
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585626261279">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585559126996" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585626261279" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,0 +1,133 @@
+public class ArrayList<E> extends AbstractList<E>
+        implements List<E>, RandomAccess, Cloneable, java.io.Serializable
+{
+    protected transient int modCount = 0;
+  private void ensureExplicitCapacity(int minCapacity) {
+        modCount++;
+        // overflow-conscious code
+        if (minCapacity - elementData.length > 0)
+            grow(minCapacity);
+    }
+  public void add(int index, E element) {
+    rangeCheckForAdd(index);
+
+    ensureCapacityInternal(size + 1);  // Increments modCount!!
+    System.arraycopy(elementData, index, elementData, index + 1,
+                     size - index);
+    elementData[index] = element;
+    size++;
+  }
+
+  public List<E> subList(int fromIndex, int toIndex) {
+    subListRangeCheck(fromIndex, toIndex, size);
+    return new SubList(this, offset, fromIndex, toIndex);
+  }
+
+  private class SubList extends AbstractList<E> implements RandomAccess {
+    private final AbstractList<E> parent;
+    private final int parentOffset;
+    private final int offset;
+    int size;
+
+    SubList(AbstractList<E> parent,
+          int offset, int fromIndex, int toIndex) {
+        this.parent = parent;
+        this.parentOffset = fromIndex;
+        this.offset = offset + fromIndex;
+        this.size = toIndex - fromIndex;
+        this.modCount = ArrayList.this.modCount;
+    }
+
+        public E set(int index, E element) {
+            rangeCheck(index);
+            checkForComodification();
+            return l.set(index+offset, element);
+        }
+
+    public ListIterator<E> listIterator(final int index) {
+                checkForComodification();
+                ...
+    }
+
+    private void checkForComodification() {
+        if (ArrayList.this.modCount != this.modCount)
+            throw new ConcurrentModificationException();
+    }
+    ...
+  }
+}
+
+第一，ArrayList 维护了一个叫作 modCount 的字段，表示集合结构性修改的次数。所谓结构性修改，指的是影响 List 大小的修改，所以 add 操作必然会改变 modCount 的值。
+第二，分析第 21 到 24 行的 subList 方法可以看到，获得的 List 其实是内部类 SubList，并不是普通的 ArrayList，在初始化的时候传入了 this。
+第三，分析第 26 到 39 行代码可以发现，这个 SubList 中的 parent 字段就是原始的 List。SubList 初始化的时候，并没有把原始 List 中的元素复制到独立的变量中保存。我们可以认为 SubList 是原始 List 的视图，并不是独立的 List。双方对元素的修改会相互影响，而且 SubList 强引用了原始的 List，所以大量保存这样的 SubList 会导致 OOM。
+第四，分析第 47 到 55 行代码可以发现，遍历 SubList 的时候会先获得迭代器，比较原始 ArrayList modCount 的值和 SubList 当前 modCount 的值。获得了 SubList 后，我们为原始 List 新增了一个元素修改了其 modCount，所以判等失败抛出 ConcurrentModificationException 异常。
+
+
+iterator遍历时引起的ConcurrentModificationException，可以看到在next()和remove()时都会调用checkForComodification，如果modCount != expectedModCount（即别的地方又remove或者add了这个list），遍历这里就会抛出ConcurrentModificationException：
+private class Itr implements Iterator<E> {
+        int cursor;       // index of next element to return
+        int lastRet = -1; // index of last element returned; -1 if no such
+        int expectedModCount = modCount;
+
+        Itr() {}
+
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        @SuppressWarnings("unchecked")
+        public E next() {
+            checkForComodification();
+            int i = cursor;
+            if (i >= size)
+                throw new NoSuchElementException();
+            Object[] elementData = ArrayList.this.elementData;
+            if (i >= elementData.length)
+                throw new ConcurrentModificationException();
+            cursor = i + 1;
+            return (E) elementData[lastRet = i];
+        }
+
+        public void remove() {
+            if (lastRet < 0)
+                throw new IllegalStateException();
+            checkForComodification();
+
+            try {
+                ArrayList.this.remove(lastRet);
+                cursor = lastRet;
+                lastRet = -1;
+                expectedModCount = modCount;
+            } catch (IndexOutOfBoundsException ex) {
+                throw new ConcurrentModificationException();
+            }
+        }
+
+        @Override
+        @SuppressWarnings("unchecked")
+        public void forEachRemaining(Consumer<? super E> consumer) {
+            Objects.requireNonNull(consumer);
+            final int size = ArrayList.this.size;
+            int i = cursor;
+            if (i >= size) {
+                return;
+            }
+            final Object[] elementData = ArrayList.this.elementData;
+            if (i >= elementData.length) {
+                throw new ConcurrentModificationException();
+            }
+            while (i != size && modCount == expectedModCount) {
+                consumer.accept((E) elementData[i++]);
+            }
+            // update once at end of iteration to reduce heap write traffic
+            cursor = i;
+            lastRet = i - 1;
+            checkForComodification();
+        }
+
+        final void checkForComodification() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+        }
+}
+
