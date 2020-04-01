@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b3106e-92f0-475a-a8f9-28bfc99d56e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/set/ArraysAsListDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/set/ListRemoveEleDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/set/SubListDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/set/源码分析.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -248,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585622224166</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="【修改内容】：List使用踩坑集合&#10;【修改人】：luoji&#10;【修改时间】：2020/04/01">
+      <created>1585710509904</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585710509905</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +292,8 @@
     <MESSAGE value="【修改内容】：笔记&#10;【修改人】：luoji&#10;【修改时间】：2020/03/26" />
     <MESSAGE value="【修改内容】：concurrentHashMap&#10;【修改人】：luoji&#10;【修改时间】：2020/03/27" />
     <MESSAGE value="【修改内容】：BigDecimal的坑&#10;【修改人】：luoji&#10;【修改时间】：2020/03/31" />
-    <option name="LAST_COMMIT_MESSAGE" value="【修改内容】：BigDecimal的坑&#10;【修改人】：luoji&#10;【修改时间】：2020/03/31" />
+    <MESSAGE value="【修改内容】：List使用踩坑集合&#10;【修改人】：luoji&#10;【修改时间】：2020/04/01" />
+    <option name="LAST_COMMIT_MESSAGE" value="【修改内容】：List使用踩坑集合&#10;【修改人】：luoji&#10;【修改时间】：2020/04/01" />
   </component>
   <component name="WindowStateProjectService">
     <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584694589023">
@@ -305,10 +308,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694581182" />
-    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1585622222034">
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1585710507485">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585622222034" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585710507485" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1585293820342">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -317,38 +320,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585194802485" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585709263715">
+    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1585728988341">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585709263715" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585709263714">
+    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585728988341" />
+    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1585728988339">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585709263714" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585709263714">
+    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585728988339" />
+    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1585728988339">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585709263714" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585709263715">
+    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585728988339" />
+    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1585728988340">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585709263715" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585629106987">
+    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585728988340" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585728988343">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585629106987" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585629106986">
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585728988343" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585728988343">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585629106986" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585629106986">
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585728988343" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585728988342">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585629106986" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585629106986">
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585728988342" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585728988343">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585629106986" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585728988343" />
     <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1585625944219">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -361,10 +364,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585626214008" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1585295032854">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1585710516780">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1585295032854" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1585710516780" />
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585626261279">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
