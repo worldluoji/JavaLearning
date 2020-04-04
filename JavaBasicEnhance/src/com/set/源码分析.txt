@@ -63,7 +63,8 @@ public class ArrayList<E> extends AbstractList<E>
 第四，分析第 47 到 55 行代码可以发现，遍历 SubList 的时候会先获得迭代器，比较原始 ArrayList modCount 的值和 SubList 当前 modCount 的值。获得了 SubList 后，我们为原始 List 新增了一个元素修改了其 modCount，所以判等失败抛出 ConcurrentModificationException 异常。
 
 
-iterator遍历时引起的ConcurrentModificationException，可以看到在next()和remove()时都会调用checkForComodification，如果modCount != expectedModCount（即别的地方又remove或者add了这个list），遍历这里就会抛出ConcurrentModificationException：
+iterator遍历时引起的ConcurrentModificationException，可以看到在next()和remove()时都会调用checkForComodification，如果modCount != expectedModCount（即别的地方又remove或者add了这个list），遍历这里就会抛出ConcurrentModificationException.
+
 private class Itr implements Iterator<E> {
         int cursor;       // index of next element to return
         int lastRet = -1; // index of last element returned; -1 if no such
@@ -131,3 +132,23 @@ private class Itr implements Iterator<E> {
         }
 }
 
+我们在 ArrayList 中定义一个成员变量 modCount，记录集合被修改的次数，集合每调用一次增加或删除元素的函数，就会给 modCount 加 1。
+当通过调用集合上的 iterator() 函数来创建迭代器的时候，我们把 modCount 值传递给迭代器的 expectedModCount 成员变量，之后每次调用迭代器上的 hasNext()、next()、currentItem() 函数，我们都会检查集合上的 modCount 是否等于 expectedModCount，也就是看，在创建完迭代器之后，modCount 是否改变过。
+如果两个值不相同，那就说明集合存储的元素已经改变了，要么增加了元素，要么删除了元素，之前创建的迭代器已经不能正确运行了，再继续使用就会产生不可预期的结果，所以我们选择 fail-fast 解决方式，抛出运行时异常，结束掉程序，让程序员尽快修复这个因为不正确使用迭代器而产生的 bug。
+
+迭代器类h还新增了一个 lastRet 成员变量，用来记录游标指向的前一个元素。通过迭代器去删除这个元素的时候，我们可以更新迭代器中的游标和 lastRet 值，来保证不会因为删除元素而导致某个元素遍历不到。如果通过容器来删除元素，并且希望更新迭代器中的游标值来保证遍历不出错，我们就要维护这个容器都创建了哪些迭代器，每个迭代器是否还在使用等信息，代码实现就变得比较复杂了。
+不过，Java 迭代器中提供的 remove() 方法还是比较鸡肋的，作用有限。它只能删除游标指向的前一个元素，而且一个 next() 函数之后，只能跟着最多一个 remove() 操作，多次调用 remove() 操作会报错。
+public class Demo {
+  public static void main(String[] args) {
+    List<String> names = new ArrayList<>();
+    names.add("a");
+    names.add("b");
+    names.add("c");
+    names.add("d");
+
+    Iterator<String> iterator = names.iterator();
+    iterator.next();
+    iterator.remove();
+    iterator.remove(); //报错，抛出IllegalStateException异常
+  }
+}
