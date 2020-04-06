@@ -1,4 +1,6 @@
-package com.optional.models;
+package com.optional;
+
+import com.optional.models.Car;
 
 import java.util.Optional;
 

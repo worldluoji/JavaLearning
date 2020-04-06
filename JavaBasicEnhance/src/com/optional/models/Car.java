@@ -26,4 +26,11 @@ public class Car {
     public void setInsurance(Optional<Insurance> insurance) {
         this.insurance = insurance;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carName='" + carName + '\'' +
+                '}';
+    }
 }
