@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b3106e-92f0-475a-a8f9-28bfc99d56e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/optional/models/TestOptionalDemo3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/optional/models/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/optional/models/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/optional/models/TestOptionalDemo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/optional/TestOptionalDemo2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
       <recent name="D:\JavaProject\JavaBasicEnhance\src\ReflectDemo\beansutil\demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestOptionalDemo3">
+  <component name="RunManager" selected="Application.GenericWithReflectionDemo">
     <configuration name="ArraysAsListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.set.ArraysAsListDemo" />
       <module name="JavaBasicEnhance" />
@@ -78,12 +75,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.set.ListDemo" />
+    <configuration name="GenericWithReflectionDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.reflection.refconstrutor.demo.GenericWithReflectionDemo" />
       <module name="JavaBasicEnhance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.set.*" />
+          <option name="PATTERN" value="com.reflection.refconstrutor.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,19 +128,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ListDemo" />
       <item itemvalue="Application.ArraysAsListDemo" />
       <item itemvalue="Application.SubListDemo" />
       <item itemvalue="Application.ListRemoveEleDemo" />
       <item itemvalue="Application.TestOptionalDemo3" />
+      <item itemvalue="Application.GenericWithReflectionDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GenericWithReflectionDemo" />
         <item itemvalue="Application.TestOptionalDemo3" />
         <item itemvalue="Application.ListRemoveEleDemo" />
         <item itemvalue="Application.SubListDemo" />
         <item itemvalue="Application.ArraysAsListDemo" />
-        <item itemvalue="Application.ListDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585710509905</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="【修改内容】：Optional使用补充&#10;【修改人】：luoji&#10;【修改时间】：2020/04/06">
+      <created>1586175903360</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1586175903361</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,25 +300,26 @@
     <MESSAGE value="【修改内容】：concurrentHashMap&#10;【修改人】：luoji&#10;【修改时间】：2020/03/27" />
     <MESSAGE value="【修改内容】：BigDecimal的坑&#10;【修改人】：luoji&#10;【修改时间】：2020/03/31" />
     <MESSAGE value="【修改内容】：List使用踩坑集合&#10;【修改人】：luoji&#10;【修改时间】：2020/04/01" />
-    <option name="LAST_COMMIT_MESSAGE" value="【修改内容】：List使用踩坑集合&#10;【修改人】：luoji&#10;【修改时间】：2020/04/01" />
+    <MESSAGE value="【修改内容】：Optional使用补充&#10;【修改人】：luoji&#10;【修改时间】：2020/04/06" />
+    <option name="LAST_COMMIT_MESSAGE" value="【修改内容】：Optional使用补充&#10;【修改人】：luoji&#10;【修改时间】：2020/04/06" />
   </component>
   <component name="WindowStateProjectService">
     <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584694589023">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="125" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694589023" />
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1586175063340">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1587636786026">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1586175063340" />
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1587636786026" />
     <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584694581182">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="400" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1584694581182" />
-    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1585710507485">
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1586175899662">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585710507485" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1586175899662" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1585293820342">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -323,22 +328,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585194802485" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1586175211599">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1587637578263">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586175211599" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1586175211598">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587637578263" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1587637578262">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586175211598" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1586175211598">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587637578262" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1587637578262">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586175211598" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1586175211598">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587637578262" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1587637578262">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586175211598" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587637578262" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585728988343">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -375,6 +380,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585626261279" />
+    <state x="303" y="1" key="search.everywhere.popup" timestamp="1587637588109">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1587637588109" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
