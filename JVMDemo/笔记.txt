@@ -24,5 +24,3 @@ public static void main(String [] args){
   System.out.println(i);
 }
 结果为1
-
-5.

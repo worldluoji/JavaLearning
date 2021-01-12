@@ -1,0 +1,6 @@
+1. jdk8后可以通过jps命令直接查询进程ID。
+
+2. 首先通过 ps 命令查询出进程 ID，再通过 jmap -heap ID 查询出 JVM 的配置信息，其中就包括垃圾收集器的设置类型。
+
+3. javac -encoding UTF-8 SyncTest.java  //先运行编译class文件命令
+    javap -v SyncTest.class //再通过javap反编译看包含了哪些信息
