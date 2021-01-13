@@ -4,3 +4,10 @@
 
 3. javac -encoding UTF-8 SyncTest.java  //先运行编译class文件命令
     javap -v SyncTest.class //再通过javap反编译看包含了哪些信息
+
+4. java -XX:+PrintCommandLineFlags -version
+可查看虚拟机版本，堆大小等等。
+
+5. java -Xms128m -Xmx2g MyApp 启动应用
+其中Xms表示初始堆大小，Xmx表示最大堆。
+在JDK8中，如果初始堆和最大堆值不一样，JVM会根据程序运行情况自动调整堆的大小。
