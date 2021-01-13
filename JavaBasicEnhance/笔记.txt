@@ -1,0 +1,12 @@
+1.  f是一个InputStream，那么BufferedReader in = new BufferedReader(new InputStreamReader(f)), 关闭时只需要in.close()，关闭最外层。
+因为Java io包里的stream和reader，都是用的装饰器模式。
+可以直接阅读BufferedReader源码。
+
+2. getDeclaredFileds和getFields的区别：
+getFields获取的是自身和继承而来的public属性，而getDeclaredFileds获取的是当前类的所有属性，包括private, protected, default, public.
+
+3. a.isAssignableFrom(b)
+针对两个Class类型实例a和b, 如果a对应的类信息是b对应类信息的父类或接口，或者a对应类信息和b对应类信息为同一个类或接口，则为true,否则为flase.
+比如List<String> list = new ArrayList<>()
+那么List.class.isAssignableFrom(list)为true
+
