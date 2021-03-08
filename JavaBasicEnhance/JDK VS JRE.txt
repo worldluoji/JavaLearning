@@ -1,0 +1,20 @@
+We can say JVM is a subset of JRE.
+
+The JRE provides a virtual platform on which the JVM and other Java
+libraries rest on. These components of JRE are virtually isolated and used for executing Java programs.
+ A system that doesn’t have JRE cannot run Java programs. We have to install JVM for executing Java programs and applications.
+ Also, know that the JDK or Java Development Kit already has JRE within it. 
+A system that has JDK installed doesn’t have to install JRE separately.
+
+
+What does JRE do?
+Executing a Java program is easy. But the underlying architecture of the JRE defines what is needed for it to be executed. 
+The JRE contains all the libraries and core classes that are needed to execute a Java program. 
+Whenever we execute a Java program, the JRE combines the needed classes and other libraries with the JVM that is required for that program.
+The JVM then loads these classes and libraries and creates a virtual environment to execute the code.
+
+
+Why use JRE when we have JDK?
+JDK is a development kit that has all the tools and utilities that can be used to create Java programs and applications. 
+These tools are basically for developers for developing and debugging purposes.
+If you are a developer then you need JDK to develop Java applications.
