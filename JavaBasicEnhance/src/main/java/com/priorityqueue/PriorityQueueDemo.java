@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class PriorityQueueDemo {
     public static void main(String[] args) {
-        TestPriorityQueue3();
+        TestPriorityQueue1();
     }
 
     public static void TestPriorityQueue1() {
@@ -13,6 +13,8 @@ public class PriorityQueueDemo {
         queue.offer(3);
         queue.offer(1);
         queue.offer(2);
+        queue.offer(2);
+        queue.remove(2); // remove时遇到一个满足的删除后就返回
         for (int num : queue) {
             System.out.println(num);
         }
