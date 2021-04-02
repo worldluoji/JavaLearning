@@ -6,7 +6,6 @@ public class User {
     private String name;
     private int age;
     private short gender;
-    private String address;
     private List<String> hobbies;
 
     public String getName() {
@@ -33,14 +32,6 @@ public class User {
         this.gender = gender;
     }
 
-    private String getAddress() {
-        return address;
-    }
-
-    private void setAddress(String address) {
-        this.address = address;
-    }
-
     public List<String> getHobbies() {
         return hobbies;
     }
@@ -58,11 +49,10 @@ public class User {
                 '}';
     }
 
-    public User(String name, int age, short gender, String address, List<String> hobbies) {
+    public User(String name, int age, short gender, List<String> hobbies) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-        this.address = address;
         this.hobbies = hobbies;
     }
 

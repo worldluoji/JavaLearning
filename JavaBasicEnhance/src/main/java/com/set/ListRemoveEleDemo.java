@@ -12,7 +12,8 @@ public class ListRemoveEleDemo {
         * 传入Integer是删除对应数值，如果是传入int基本类型，则是删除对应下标
          * 查看源码可以看到remove方法是被重载的，传入包装类型和基本类型不同的方法处理
         */
-        lst.remove(new Integer(3));
+        Integer num = 3;
+        lst.remove(num);
         lst.stream().forEach(System.out::println);
         lst.clear();
         lst.addAll(Arrays.asList(1,2,3,4,5,6));

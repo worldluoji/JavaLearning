@@ -31,7 +31,7 @@ public class DynaProxyHello implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object result = null;
         try {
-            Class clazz = this.proxy.getClass();
+            Class<?> clazz = this.proxy.getClass();
             // 方法执行之前
             Method start = clazz.getDeclaredMethod("beforeMethod", new Class[]{Method.class});
             start.invoke(this.proxy, new Object[]{method});
