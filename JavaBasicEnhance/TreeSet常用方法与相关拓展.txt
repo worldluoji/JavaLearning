@@ -1,0 +1,39 @@
+我们要明确的一点是，在java中我们通常说的集合有序无序针对的是插入顺序，是指在插入元素时，插入的顺序是否保持，当遍历集合时它是否会按照插入顺序展示。像TreeSet和TreeMap这样的集合主要实现了自动排序，我们称之为排序，而根据前面的定义它不一定是有序的。所以，在我们常见的集合类型中，有序的有ArrayList，LinkedList，LinkedHashSet，LinkedHashMap等，无序的有HashSet，HashMap，HashTable，TreeSet，TreeMap等，而同时TressSet和TressMap又是可排序的。
+我们有时候会听到一种笼统的说法，认为List是有序的，Set和Map是无序的，其实不然，在Set和Map中也有通过双向链表来实现有序的LinkedHashSet和LinkedHashMap，而产生这样看法的原因，我认为主要是因为其他的常见集合类都是JDK1.2就有的，而LinkedHashSet和LinkedHashMap是JDK1.4才诞生的，也就是说1.4之前这样说没问题，这样的说法也许从很早流传了下来，但是当我们用现在眼光来看待，它就是错误的
+
+treeSet.add()
+public boolean add（E e）
+如果指定的元素尚不存在，则将其添加到此集合中。更正式地说，e如果集合中不包含任何元素，则将指定的元素添加到此集合e2中 Objects.equals(e, e2)。如果此set已包含该元素，则调用将保持set不变并返回false。
+
+treeSet.addAll()
+public boolean addAll（Collection <？extends E > c）
+将指定集合中的所有元素添加到此集合中。
+
+treeSet.remove()
+public boolean remove（Object o）
+如果存在，则从该集合中移除指定的元素。更正式地说，移除元素e，使得 Objects.equals(o, e)，如果此set包含这样的元素。返回true此set是否包含该元素（或等效地，如果此set因调用而更改）。（一旦调用返回，该集合将不包含该元素。）
+
+treeSet.size()
+public int size（） 返回此集合中的元素数（其基数）。
+
+treeSet.isEmpty()
+public boolean isEmpty（）
+true如果此set不包含任何元素，则返回
+
+treeSet.ceiling()
+public E ceiling?(E e)
+返回此set中大于或等于给定元素的最小元素，或者null如果没有这样的元素。
+
+treeSet.floor()
+public E floor(E e)
+返回此set中小于或等于给定元素的最大元素，或者null如果没有这样的元素。
+
+treeSet.lower()
+public E lower?(E e)
+返回此集合中的最大元素严格小于给定元素，或者null如果没有这样的元素。
+
+treeSet.contains()
+public boolean contains（Object o）
+true如果此set包含指定的元素，则返回。更正式地说，返回true当且仅当此set包含的元素e，使得 Objects.equals(o, e)。
+
+
