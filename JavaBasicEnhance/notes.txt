@@ -10,3 +10,22 @@ getFields获取的是自身和继承而来的public属性，而getDeclaredFileds
 比如List<String> list = new ArrayList<>()
 那么List.class.isAssignableFrom(list)为true
 
+4. 二维数组排序参考：
+class Solution {
+    public boolean canAttendMeetings(int[][] intervals) {
+        int r = intervals.length;
+        if (r == 0) {
+            return true;           
+        }
+
+        Arrays.sort(intervals, (int[] o1, int[] o2) -> o1[0] - o2[0]);
+
+        for (int i = 1; i < r; i++) {
+            if ( (intervals[i][0] < intervals[i-1][1]) && (intervals[i][0] >= intervals[i-1][0]) ) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
