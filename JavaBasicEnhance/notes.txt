@@ -29,3 +29,17 @@ class Solution {
         return true;
     }
 }
+
+5. JDK8数组和List相互转换
+数组转化为List
+ String[] arrays = new String[]{"a", "b", "c"};
+ List<String> listStrings = Stream.of(arrays).collect(Collectors.toList())
+这是建议的方式。Arrays.asList有坑。
+
+List转化为数组：
+1）. 使用Stream:
+String[] ss = listStrings.stream().toArray(String[]::new);
+这是推荐的方式。
+
+2）. 使用List中的toArray()方法
+String[] sss = listStrings.toArray(new String[listStrings.size()]);
