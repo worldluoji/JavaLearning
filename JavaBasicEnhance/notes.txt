@@ -43,3 +43,36 @@ String[] ss = listStrings.stream().toArray(String[]::new);
 
 2）. 使用List中的toArray()方法
 String[] sss = listStrings.toArray(new String[listStrings.size()]);
+
+6. 利用反射机制获取注解属性和修改注解属性值的方法：
+InvocationHandler handler = Proxy.getInvocationHandler(annotation);
+// 通过动态代理获取常量池中的Map memberValues字段
+Field field = handler.getClass().getDeclaredField("memberValues");
+// 设置字段可访问性
+field.setAccessible(true);
+// 获取属性注解ID的Map
+Map o = (Map) field.get(handler);
+// 修改属性注解ID的属性值
+o.put("value", "修改成功");
+
+7. 没有getter和setter方法，反射机制仍然可以修改属性值
+
+8. 在1.8低版本及以下的版本中，双重锁要加volatile关键字，禁止指令重排序，否则可能小概率会出现空指针异常。
+原因是编译器的优化和线程切换导致如下操作不是原子的: a.申请一块内存M->b.赋值给instance->c.初始化instance
+private volatile static ActivityLifeManager instance;
+public static ActivityLifeManager getInstance() {
+    if (instance == null) {
+        synchronized (ActivityLifeManager.class) {
+            if (instance == null) {
+                instance = new ActivityLifeManager();
+            }
+        }
+    }
+    return sInstance;
+}
+如果不加volatile, sonarcube会报：
+Possible double check of field
+This method may contain an instance of double-checked locking. 
+This idiom is not correct according to the semantics of the Java memory model. 
+For more information, see the web page.
+
