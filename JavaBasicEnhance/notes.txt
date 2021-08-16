@@ -86,3 +86,5 @@ For more information, see the web page.
 3）并不要求根据equals(java.lang.Object)方法不相等的两个对象，调用二者各自的hashCode()方法必须产生不同的integer结果。然而，程序员应该意识到对于不同的对象产生不同的integer结果，有可能会提高hash table的性能。
 
 4）大量的实践表明，由Object类定义的hashCode()方法对于不同的对象返回不同的integer。
+
+10. 经常发现有List<? super T>、Set<? extends T>的声明，是什么意思呢？<? super T>表示包括T在内的任何T的父类，<? extends T>表示包括T在内的任何T的子类。
