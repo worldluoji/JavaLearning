@@ -1,4 +1,15 @@
- final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+HashMap 内部的结构，它可以看作是数组（Node<K,V>[] table）和链表结合组成的复合结构，
+数组被分为一个个桶（bucket），通过哈希值决定了键值对在这个数组的寻址；
+哈希值相同的键值对，则以链表形式存储,
+这里需要注意的是，如果链表大小超过阈值（TREEIFY_THRESHOLD, 8），链表就会被改造为树形结构。 
+
+public V put(K key, V value) {
+    return putVal(hash(key), key, value, false, true);
+}
+
+-> putVal
+
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                    boolean evict) {
         Node<K,V>[] tab; Node<K,V> p; int n, i;
         if ((tab = table) == null || (n = tab.length) == 0)
@@ -53,3 +64,70 @@
         return null;
     }
 
+
+如果表格是 null，resize 方法会负责初始化它，这从 tab = resize() 可以看出。
+resize 方法兼顾两个职责，创建初始存储表格，或者在容量不满足需求的时候，进行扩容（resize）。
+在放置新的键值对的过程中，如果发生下面条件，就会发生扩容:
+if (++size > threshold)
+    resize();
+具体键值对在哈希表中的位置（数组 index）取决于下面的位运算：
+i = (n - 1) & hash
+
+为什么这里需要将高位数据移位到低位进行异或运算呢？这是因为有些数据计算出的哈希值差异主要在高位，
+而 HashMap 里的哈希寻址是忽略容量以上的高位的，那么这种处理就可以有效避免类似情况下的哈希碰撞。
+static final int hash(Object kye) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>>16);
+}
+
+这种方式能避免只取低位进行计算的结果，通常我们的n都不会很大，如果直接拿hashCode的值，
+那么高位的哈希值其实是没有参与进来的；这样将自己的高位与低于异或，其实是混合了高低位，
+变相了保留了高位的信息，以此来加大低位的随机性.
+
+再看看resize()方法：
+final Node<K,V>[] resize() {
+    // ...
+    else if ((newCap = oldCap << 1) < MAXIMUM_CAPACIY &&
+                oldCap >= DEFAULT_INITIAL_CAPAITY)
+        newThr = oldThr << 1; // double there, 门限通常是以倍数进行调整 （newThr = oldThr << 1），我前面提到，根据 putVal 中的逻辑，当元素个数超过门限大小时，则调整 Map 大小。
+       // ... 
+    else if (oldThr > 0) // initial capacity was placed in threshold
+        newCap = oldThr;
+    else {  
+        // zero initial threshold signifies using defaultsfults
+        newCap = DEFAULT_INITIAL_CAPAITY;
+        newThr = (int)(DEFAULT_LOAD_ATOR* DEFAULT_INITIAL_CAPACITY；
+    }
+    if (newThr ==0) {
+        float ft = (float)newCap * loadFator;
+        newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?(int)ft : Integer.MAX_VALUE);
+    }
+    threshold = neThr;
+    Node<K,V>[] newTab = (Node<K,V>[])new Node[newap];
+    table = n；
+    // 移动到新的数组结构e数组结构,扩容后，需要将老的数组中的元素重新放置到新的数组，这是扩容的一个主要开销来源。
+   }
+
+
+关于容量和负载因子
+容量和负载系数决定了可用的桶的数量，空桶太多会浪费空间，如果使用的太满则会严重影响操作的性能。
+
+负载因子 * 容量 > 元素数量
+
+如果没有特别需求，不要轻易进行更改，因为 JDK 自身的默认负载因子是非常符合通用场景的需求的。
+如果确实需要调整，建议不要设置超过 0.75 的数值，因为会显著增加冲突，降低 HashMap 的性能。
+如果使用太小的负载因子，按照上面的公式，预设容量值也进行调整，否则可能会导致更加频繁的扩容，
+增加无谓的开销，本身访问性能也会受影响。
+
+
+Java8中的Hashmap底层结构有一定的变化，还是使用的数组，但是数组的对象以前是Entry对，
+现在换成了Node对象（可以理解是Entry对，结构一样，存储时也会存key/value键值对、前一个和后一个Node的地址），
+以前所有的Entry向下延伸都是链表，Java8变成链表和红黑树的组合，数据少量存入的时候优先还是链表，
+当链表长度大于8，且总数据量大于64的时候，链表就会转化成红黑树，
+所以你会看到Java8的Hashmap的数据存储是链表+红黑树的组合，
+如果数据量小于64则只有链表，如果数据量大于64，且某一个数组下标数据量大于8，那么该处即为红黑树。 
+红黑树的插入、删除、查找各种操作性能都比较稳定。 
+
+本质其实是性能问题。哈希碰撞频繁，导致链表过长，查询时间陡升，黑客则会利用这个『漏洞』来攻击服务器，
+让服务器CPU被大量占用，从而引起了安全问题。 而树化(使用红黑树）能将时间复杂度降到O(logn)，
+从而避免查询时间过长。
