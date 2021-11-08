@@ -1,6 +1,10 @@
 1. jdk8后可以通过jps命令直接查询进程ID。
 
 2. 首先通过 ps 命令查询出进程 ID，再通过 jmap -heap ID 查询出 JVM 的配置信息，其中就包括垃圾收集器的设置类型。
+执行命令 jmap -histo ID  查看堆内存(histogram)中的对象数量及大小
+将内存使用的详细情况输出到文件，执行命令： jmap -dump:format=b,file=heapDump 6900
+然后用jhat命令可以参看 jhat -port 5000 heapDump 在浏览器中访问：http://localhost:5000/ 查看详细信息
+
 
 3. javac -encoding UTF-8 SyncTest.java  //先运行编译class文件命令
     javap -v SyncTest.class //再通过javap反编译看包含了哪些信息
@@ -11,3 +15,65 @@
 5. java -Xms128m -Xmx2g MyApp 启动应用
 其中Xms表示初始堆大小，Xmx表示最大堆。
 在JDK8中，如果初始堆和最大堆值不一样，JVM会根据程序运行情况自动调整堆的大小。
+
+
+6.  jstat。
+ jstat -gc -t 11656 10000 30 
+
+-gc ：将显示与垃圾收集相关的统计信息
+自JVM启动以来的-t时间戳将被打印
+11656：目标JVM进程ID
+10000：每10,000毫秒（即10秒）将打印一次统计信息。
+30 ：将打印30次迭代的统计信息。 因此，以上选项将导致JVM打印指标300秒（即10秒x 30次迭代）。
+
+返回结果：
+时间戳记-自目标JVM启动时间以来的时间（以秒为单位）。
+S0C –幸存者0区域的容量，以KB为单位
+S1C –幸存者1区域的容量，以KB为单位
+S0U –幸存者0区域使用的空间以KB为单位
+S1U –幸存者1区域以KB为单位使用空间
+EC –伊甸园地区容量（KB）
+欧盟–伊甸园地区的已利用空间（以KB为单位）
+OC –旧区域容量（KB）
+OU –旧区域的已利用空间，以KB为单位
+MC –元空间区域容量，以KB为单位
+MU –元空间区域使用的空间以KB为单位
+CCSC –压缩类空间区域的容量，以KB为单位
+CCSU –压缩类空间区域以KB为单位使用空间
+YGC –迄今为止发生的年轻GC事件的数量
+YGCT –到目前为止，年轻GC花费的时间
+FGC –迄今为止已发生的完全GC事件的数量
+FGCT –到目前为止已花费的完整GC时间
+GCT –到目前为止所花费的GC时间总量（基本上是YGCT + FGCT）
+
+
+7. jstack
+jstack是JVM自带的Java堆栈跟踪工具，它用于打印出给定的java进程ID、core file、远程调试服务的Java堆栈信息.
+
+示例：
+jstack –l 23561   
+23561为进程号
+
+-F	当正常输出的请求不被响应时，强制输出线程堆栈
+-m	如果调用到本地方法的话，可以显示C/C++的堆栈
+-l	除堆栈外，显示关于锁的附加信息，在发生死锁时可以用jstack -l pid来观察锁持有情况
+
+jstack可以用于定位cpu飙升、死锁等问题。
+例如，如果有死锁，会有“ deadlock ”等信息；
+如果是cpu过高，在jstack获得得thread dump中，每个线程都有一个nid，
+我们找到对应的nid， 可以发现该线程一直在跑哪一行，再返回去看代码定位。
+可以多次使用jstack, 这样对比起来看。
+
+8. jcmd
+它是一个多功能工具，可以用来导出堆，查看Java进程，导出线程信息，执行GC等.
+示例： jcmd -l
+参数-l表示列出所有java虚拟机，针对每一个虚拟机，可以使用help命令列出该虚拟机支持的所有命令。
+
+jcmd pid help 可以查看能够使用得选项信息：
+jcmd pid VM.version   查看VM版本信息
+jcmd pid VM.flags   查看启动信息比如 -XX:MaxNewSize   -XX:InitialHeapSize
+jcmd pid VM.command_line   -xmx -xms等等
+jcmd pid VM.system_properties  VM属性
+jcmd pid Thread.print   等价于jstack  -l pid
+jcmd pid GC.class_histogram  等价于jmap -histo ID  查看堆内存(histogram)中的对象数量及大小   
+jcmd pid GC.heap_dump 查看 JVM 的Heap Dump
