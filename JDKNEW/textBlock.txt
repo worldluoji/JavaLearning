@@ -1,0 +1,15 @@
+JDK 15开始正式支持文字块，用法：
+
+String textBlock = """
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>"Hello World!"</h1>
+    </body>
+</html>
+""";
+System.out.println(
+"Here is the text block:\n" + textBlock);
+
+需要注意的是，开始分隔符必须单独成行；三个双引号字符后面的空格和换行符都属于开始分隔符。
+它实际要表达的文字就是什么样子的。这也就是说，“所见即所得”。
