@@ -1,0 +1,31 @@
+record 档案类，JDK16开始正式支持：
+
+
+package co.ivi.jus.record.modern;
+
+public record Circle(double radius) implements Shape {
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+
+Circle circle = new Circle(10.0);
+
+
+double radius = circle.radius();
+
+需要注意的是，由于档案类表示的是不可变数据（不可变，也就没有线程安全问题），
+除了构造方法之外，并没有给不可变变量赋值的方法。
+
+档案类内置了缺省的 equals 方法、hashCode 方法以及 toString 方法的实现。
+一般情况下，我们就再也不用担心这三个方法的重写问题了。这不仅减少了代码数量，提高了编码的效率；
+还减少了编码错误，提高了产品的质量。
+
+Java 档案类还做了以下的限制：
+Java 档案类不支持扩展子句，用户不能定制它的父类。隐含的，它的父类是 java.lang.Record。父类不能定制，也就意味着我们不能通过修改父类来影响 Java 档案的行为。
+Java 档案类是个终极（final）类，不支持子类，也不能是抽象类。没有子类，也就意味着我们不能通过修改子类来改变 Java 档案的行为。
+Java 档案类声明的变量是不可变的变量。这就是我们前面反复强调的，一旦实例化就不能再修改的关键所在。
+Java 档案类不能声明可变的变量，也不能支持实例初始化的方法。这就保证了，我们只能使用档案类形式的构造方法，避免额外的初始化对可变性的影响。
+Java 档案类不能声明本地（native）方法。如果允许了本地方法，也就意味着打开了修改不可变变量的后门。
