@@ -1,0 +1,48 @@
+1. C:\Users\12345>jshell
+|  欢迎使用 JShell -- 版本 11.0.2
+|  要大致了解该版本, 请键入: /help intro
+
+2. jshell> /exit
+|  再见
+
+3. C:\Users\12345>jshell -v
+|  欢迎使用 JShell -- 版本 11.0.2
+|  要大致了解该版本, 请键入: /help intro
+
+4. jshell> System.out.println("Hello JDK17");
+Hello JDK17
+
+
+5. 
+jshell> String greeting;
+greeting ==> null
+|  created variable greeting : String
+
+jshell> String language = "English";
+language ==> "English"
+|  created variable language : String
+
+jshell> greeting = switch (language) {
+   ...>     case "English" -> "Hello";
+   ...>     case "Spanish" -> "Hola";
+   ...>     case "Chinese" -> "Nihao";
+   ...>     default -> throw new RuntimeException("Unsupported language");
+   ...> };
+greeting ==> "Hello"
+|  assigned to greeting : String
+
+jshell> System.out.println(greeting);
+Hello
+
+6. 
+jshell> 1 + 1
+$1 ==> 2
+|  created scratch variable $1 : int
+
+jshell> "Hello, world" == "Hello, world"
+$2 ==> true
+|  created scratch variable $2 : boolean
+
+jshell> "Hello, world" == new String("Hello, world")
+$3 ==> false
+|  created scratch variable $3 : boolean
