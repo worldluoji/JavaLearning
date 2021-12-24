@@ -89,3 +89,10 @@ For more information, see the web page.
 4）大量的实践表明，由Object类定义的hashCode()方法对于不同的对象返回不同的integer。
 
 10. 经常发现有List<? super T>、Set<? extends T>的声明，是什么意思呢？<? super T>表示包括T在内的任何T的父类，<? extends T>表示包括T在内的任何T的子类。
+
+10. 字符串排序
+private String getSortedStr(String s) {
+        char[] as = s.toCharArray();
+        Arrays.sort(as);
+        return new String(as);
+}
