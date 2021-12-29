@@ -96,3 +96,7 @@ private String getSortedStr(String s) {
         Arrays.sort(as);
         return new String(as);
 }
+
+11. 
+Integer.toBinaryString(n) 将int转化为二进制字符串
+Integer.bitCount(n) 统计二进制中1的个数
