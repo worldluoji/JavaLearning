@@ -1,0 +1,68 @@
+类型匹配在 JDK 16 正式发布
+
+原来的写法：
+if (shape instanceof Rectangle) {
+    Rectangle rect = (Rectangle) shape;
+        return (rect.length == rect.width);
+}
+
+现在的写法：
+if (shape instanceof Rectangle rect) {
+    return (rect.length == rect.width);
+}
+
+
+其它情况：
+if (!(shape instanceof Rectangle rect)) {
+    return (rect.length == rect.width);
+}
+如果目标变量不是一个长方形的实例，Java 编译器能够检测出上面的错误，不会允许使用没有赋值的匹配变量。
+
+public static boolean isSquareImplD(Shape shape) {
+    return shape instanceof Square ||  // rect is not in scope here
+          (shape instanceof Rectangle rect ||
+           rect.length() == rect.width());   // rect is not in scope here
+}
+
+public static boolean isSquareImplE(Shape shape) {
+    return shape instanceof Square |  // rect is not in scope here
+          (shape instanceof Rectangle rect &
+           rect.length() == rect.width());   // rect is in scope here
+}
+
+public static boolean isSquareImplB(Shape shape) {
+    if (!(shape instanceof Rectangle rect)) {
+        // rect is not in scope here
+        return shape instanceof Square;
+    }
+
+    // rect is in scope
+    return rect.length() == rect.width();
+}
+
+if (!(shape instanceof Rectangle rect)) {
+    // Field rect is in scope, local rect is not in scope here
+} else {
+    // Field rect is shadowed, local rect is in scope
+}
+// Field rect is in scope, local rect is not in scope here
+
+
+public final class Shadow {
+    private static final Rectangle rect = null;
+
+    public static boolean isSquare(Shape shape) {
+        if (shape instanceof Rectangle rect) {
+            // Field rect is shadowed, local rect is in scope
+            System.out.println("This should be the local rect: " + rect);
+            return rect.length() == rect.width();
+        }
+
+        // Field rect is in scope, local rect is not in scope here
+        System.out.println("This should be the field rect: " + rect);
+        return shape instanceof Shape.Square;
+    }
+}
+
+
+总结一下，除了位运算情况特殊一点，其它情况只有在为true的后续代码块内，才可以使用rect。

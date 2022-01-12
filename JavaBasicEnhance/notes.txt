@@ -100,3 +100,8 @@ private String getSortedStr(String s) {
 11. 
 Integer.toBinaryString(n) 将int转化为二进制字符串
 Integer.bitCount(n) 统计二进制中1的个数
+
+12.  异常分类
+1）非正常异常（Error）：这类异常的命名以 Error 结尾，比如 OutOfMemoryError，NoSuchMethodError。这类异常，编译器编译时不检查，应用程序不需要处理，接口不需要声明，接口规范也不需要纪录；
+2）运行时异常（RuntimeException）：这类异常的命名通常以 Exception 结尾，比如 IllegalArgumentException，NullPointerException。这类异常，编译器编译时不检查，接口不需要声明，但是应用程序可能需要处理，因此接口规范需要记录清楚；
+3）非运行时异常：除了运行时异常之外的其他的正常异常都是非运行时异常，比如 InterruptedException，GeneralSecurityException。和运行时异常一样，命名通常以 Exception 结尾。这类异常，编译器编译时会检查异常是否已经处理或者可以抛出，接口需要声明，应用程序需要处理，接口规范需要记录清楚
