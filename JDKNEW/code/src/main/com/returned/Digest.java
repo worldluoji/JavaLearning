@@ -51,7 +51,13 @@ public sealed abstract class Digest {
         return switch (algorithm) {
             case "SHA-256" -> new ReturnValue(new SHA256());
             case "SHA-512" -> new ReturnValue(new SHA512());
-            case null, default -> new ErrorCode(-1);
+            case null, default -> {
+                //  这样可以打印调用栈
+                System.getLogger("co.ivi.jus.stack.union")
+                      .log(System.Logger.Level.INFO, "Unknown algorithm is specified " + algorithm, 
+                           new Throwable("the calling stack"));
+                yield new ErrorCode(-1);
+            }
         };
     }
 
