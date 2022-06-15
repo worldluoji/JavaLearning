@@ -3,7 +3,7 @@ package com.design.adapter;
 /**
 * 通过组合的方式进行适配
 * */
-public class AdapterByCombination implements ITarget{
+public class AdapterByCombination implements ITarget {
     private ITarget target;
     public AdapterByCombination(ITarget target) {
         this.target = target;
