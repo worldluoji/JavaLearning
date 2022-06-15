@@ -1,6 +1,5 @@
 package com.design.strategy;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
 * 翻译成中文就是：定义一族算法类，将每个算法分别封装起来，让它们可以互相替换。

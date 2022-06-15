@@ -3,7 +3,6 @@ package com.design.iterator;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
 * 迭代器是用来遍历容器的，所以，一个完整的迭代器模式一般会涉及容器和容器迭代器两部分内容。

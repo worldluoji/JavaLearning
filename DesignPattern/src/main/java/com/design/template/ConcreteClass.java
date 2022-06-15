@@ -1,7 +1,6 @@
 package com.design.template;
 
 import java.util.Random;
-import java.util.UUID;
 
 public class ConcreteClass extends TemplateClass {
     @Override

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AbstractSubject implements Subject {
-    private List<Observer> ObserverList = new ArrayList();
+    private List<Observer> ObserverList = new ArrayList<>();
 
     @Override
     public void registerObserver(Observer observer) {

@@ -1,6 +1,5 @@
 package com.design.observer.myeventbus;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class MyEventBusDemo {
